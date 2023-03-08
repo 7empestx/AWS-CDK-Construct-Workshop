@@ -7,6 +7,9 @@
   "scripts": {
     "build": "npx projen build",
     "bump": "npx projen bump",
+    "bundle": "npx projen bundle",
+    "bundle:calendar/calendar-setup.lambda": "npx projen bundle:calendar/calendar-setup.lambda",
+    "bundle:calendar/calendar-setup.lambda:watch": "npx projen bundle:calendar/calendar-setup.lambda:watch",
     "clobber": "npx projen clobber",
     "compat": "npx projen compat",
     "compile": "npx projen compile",
@@ -34,12 +37,14 @@
     "organization": false
   },
   "devDependencies": {
+    "@types/aws-lambda": "^8.10.111",
     "@types/jest": "^27",
     "@types/node": "^14",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
     "aws-cdk-lib": "2.1.0",
     "constructs": "10.0.5",
+    "esbuild": "^0.17.11",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.7",
     "eslint-import-resolver-typescript": "^3.5.3",
@@ -60,6 +65,12 @@
     "aws-cdk-lib": "^2.1.0",
     "constructs": "^10.0.5"
   },
+  "dependencies": {
+    "aws-sdk": "^2.1330.0"
+  },
+  "bundledDependencies": [
+    "aws-sdk"
+  ],
   "keywords": [
     "cdk"
   ],
